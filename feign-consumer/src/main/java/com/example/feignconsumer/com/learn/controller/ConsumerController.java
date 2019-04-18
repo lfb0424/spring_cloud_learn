@@ -25,7 +25,7 @@ public class ConsumerController {
         StringBuilder sb=new StringBuilder();
         sb.append(refactorHelloService.hello("MIMI")).append('\n');
         sb.append(refactorHelloService.hello("MIMI",20)).append("\n");
-        sb.append(refactorHelloService.hello(new com.example.helloserviceapi.com.learn.dto.User("DIDI",20))).append("\n");
+//        sb.append(refactorHelloService.hello(new com.example.helloserviceapi.com.learn.dto.User("DIDI",20))).append("\n");
         return sb.toString();
     }
 
