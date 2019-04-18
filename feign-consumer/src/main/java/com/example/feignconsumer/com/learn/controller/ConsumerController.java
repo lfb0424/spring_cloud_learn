@@ -4,6 +4,7 @@ import com.example.feignconsumer.com.learn.entity.User;
 import com.example.feignconsumer.com.learn.service.HelloService;
 import com.example.feignconsumer.com.learn.service.RefactorHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,8 @@ public class ConsumerController {
         StringBuilder sb=new StringBuilder();
         sb.append(refactorHelloService.hello("MIMI")).append('\n');
         sb.append(refactorHelloService.hello("MIMI",20)).append("\n");
-//        sb.append(refactorHelloService.hello(new com.example.helloserviceapi.com.learn.dto.User("DIDI",20))).append("\n");
+//        com.example.helloserviceapi.com.learn.dto.User user =new com.example.helloserviceapi.com.learn.dto.User("MIMI",20);
+//        sb.append(refactorHelloService.hello(user)).append("\n");
         return sb.toString();
     }
 

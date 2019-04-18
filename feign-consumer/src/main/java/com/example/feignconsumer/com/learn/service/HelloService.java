@@ -1,6 +1,7 @@
 package com.example.feignconsumer.com.learn.service;
 
 import com.example.feignconsumer.com.learn.entity.User;
+import com.example.feignconsumer.com.learn.util.HelloServiceFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * @Author: admin
  * @Date: 2019/4/12 13:53
  */
-@FeignClient("HELLO-SERVICE")
+@FeignClient(value = "HELLO-SERVICE",fallback = HelloServiceFallback.class)
 public interface HelloService {
 
     /**
