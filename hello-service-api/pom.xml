@@ -31,6 +31,7 @@
         </dependency>
     </dependencies>
 
+    <!--不使用springboot的插件。使用的话生成可执行jar包。其他项目导入这个项目jar包使用时就会报错-->
     <!--<build>-->
         <!--<plugins>-->
             <!--<plugin>-->
