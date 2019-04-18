@@ -2,6 +2,7 @@ package com.example.feignconsumer.com.learn.controller;
 
 import com.example.feignconsumer.com.learn.entity.User;
 import com.example.feignconsumer.com.learn.service.HelloService;
+import com.example.feignconsumer.com.learn.service.RefactorHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,17 @@ public class ConsumerController {
 
     @Autowired
     HelloService helloService;
+    @Autowired
+    RefactorHelloService refactorHelloService;
+
+    @RequestMapping(value = "/feign-consumer3",method = RequestMethod.GET)
+    public String helloConsumer3(){
+        StringBuilder sb=new StringBuilder();
+        sb.append(refactorHelloService.hello("MIMI")).append('\n');
+        sb.append(refactorHelloService.hello("MIMI",20)).append("\n");
+        sb.append(refactorHelloService.hello(new com.example.helloserviceapi.com.learn.dto.User("DIDI",20))).append("\n");
+        return sb.toString();
+    }
 
     @RequestMapping(value = "/feign-consumer",method = RequestMethod.GET)
     public String helloConsumer(){
