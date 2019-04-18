@@ -12,13 +12,7 @@ import java.util.Random;
 
 
 /**
- * @ProjectName: springboot
- * @Package: com.example.springboot.com.learn.controller
- * @ClassName: HelloController
- * @Author: admin
- * @Description: ${description}
- * @Date: 2019/4/9 11:48
- * @Version: 1.0
+ * @author lifubei
  */
 @RestController
 public class HelloController {
@@ -47,18 +41,18 @@ public class HelloController {
         return "++++++++++++++++++++Hello  World!!++++++++++++++++++++++++";
     }
 
-    @RequestMapping(value = "/hello1",method = RequestMethod.GET)
-    public String hello1(@RequestParam String name){
-        return "hello "+name;
+    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+    public String hello1(@RequestParam String name) {
+        return "hello " + name;
     }
 
-    @RequestMapping(value = "/hello2",method = RequestMethod.GET)
-    public User hello(@RequestHeader String name, @RequestHeader Integer age){
-        return new User(name,age);
+    @RequestMapping(value = "/hello2", method = RequestMethod.GET)
+    public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+        return new User(name, age);
     }
 
-    @RequestMapping(value = "/hello3",method = RequestMethod.POST)
-    public String hello(@RequestBody User user){
-        return "Hello "+ user.getName()+", "+user.getAge();
+    @RequestMapping(value = "/hello3", method = RequestMethod.POST)
+    public String hello(@RequestBody User user) {
+        return "Hello " + user.getName() + ", " + user.getAge();
     }
 }
