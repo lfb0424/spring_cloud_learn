@@ -19,7 +19,7 @@ zuul:
       serviceId: hello-service
     api-b:
       path: /api-b/**
-      servicedId: feign-consumer
+      serviceId: feign-consumer
 
 eureka:
   client:
